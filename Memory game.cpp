@@ -18,7 +18,7 @@ void waitForEnter() {
 int main()
 {
     int arr[100];
-    int n, n1, n2, game=0, finded=0, mn=1;
+    int n, n1, n2, game=0, finded=0, mn=1, attempt=0;
     int finded1=0, finded2=0, finded3=0, finded4=0, finded5=0, finded6=0, finded7=0, finded8=0, finded9=0;
     cout<<"Welcome to the memory game!"<<endl;
     cout<<"Enter the size of an array (6-20): ";
@@ -42,7 +42,7 @@ int main()
             cout<<"\nHere is the array: ";
             for(int i=0; i<n; i++)
             {
-                if(arr[i]==finded || arr[i]==finded1 || arr[i]==finded2)
+                if(arr[i]==finded || arr[i]==finded1 || arr[i]==finded2 || arr[i]==finded3 || arr[i]==finded4 || arr[i]==finded5 || arr[i]==finded6 || arr[i]==finded7 || arr[i]==finded8 || arr[i]==finded9)
                 {
                     cout<<arr[i]<<" ";    
                 }
@@ -64,45 +64,25 @@ int main()
                     game++;
                     cout<<"\nGreat! The cards are matched. Continue..."<<endl;
                     if(game==1)
-                    {
                         finded=arr[n1];
-                    }
                     else if(game==2)
-                    {
                         finded1=arr[n1];
-                    }
                     else if(game==3)
-                    {
                         finded2=arr[n1];
-                    }
                     else if(game==4)
-                    {
                         finded3=arr[n1];
-                    }
                     else if(game==5)
-                    {
                         finded4=arr[n1];
-                    }
                     else if(game==6)
-                    {
                         finded5=arr[n1];
-                    }
                     else if(game==7)
-                    {
                         finded6=arr[n1];
-                    }
                     else if(game==8)
-                    {
                         finded7=arr[n1];
-                    }
                     else if(game==9)
-                    {
                         finded8=arr[n1];
-                    }
                     if(game==10)
-                    {
                         finded9=arr[n1];
-                    }
                 }
                 else
                 {
@@ -114,8 +94,10 @@ int main()
                 cout<<"\nThe cards do not match. Try again!"<<endl;
             }
             waitForEnter();
+            attempt++;
         }
-        cout<<"Well Played!"<<endl;
+        cout<<"Well Played! You won the game!"<<endl;
+        cout<<attempt<<" attempts were made"<<endl;
     }
     else
     {
